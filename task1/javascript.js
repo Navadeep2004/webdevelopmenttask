@@ -35,11 +35,13 @@ http.onload = function(){
 
 const searchInput=document.querySelector(".search-field")
 searchInput.addEventListener("input",e=>{
-    const value=e.target.value.toLowerCase()
+    const value=e.target.value.toUpperCase()
 for(let i=0;i<30;i++)
 {
     var element =document.getElementById(i)
-   if(!products[i].title.toLowerCase().includes(value) && !products[i].description.toLowerCase().includes(value))
+    var t = products[i].title.toUpperCase()
+    var d = products[i].description.toUpperCase()
+   if(!t.includes(value) && !d.includes(value))
    {
         element.style.display="none"
    }else
